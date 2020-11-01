@@ -13,9 +13,9 @@ This application includes
 - A High Score section that displays and continuously updates the users scores 
 
 # Images 
-<img src=Images/Screen Shot 2020-10-31 at 5.43.45 PM.png>
-<img src=Images/Screen Shot 2020-10-31 at 5.43.56 PM.png>
-<img src=Images/Screen Shot 2020-10-31 at 5.44.06 PM.png>
-<img src=Images/Screen Shot 2020-10-31 at 5.44.16 PM.png>
+<img src="Images/Screen Shot 2020-10-31 at 5.43.45 PM.png">
+<img src="Images/Screen Shot 2020-10-31 at 5.43.56 PM.png">
+<img src="Images/Screen Shot 2020-10-31 at 5.44.06 PM.png">
+<img src="Images/Screen Shot 2020-10-31 at 5.44.16 PM.png">
 
 # Link to Deployed Application
