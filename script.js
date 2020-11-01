@@ -7,6 +7,7 @@ let Allscores = [];
 let timer = null;
 let timerInterval = null;
 
+//Questions Section
 const questions = [
     {
         question: "What is the process of finding and removing errors in a program?", answers: [
@@ -92,13 +93,12 @@ let started = false;
 let score = 0;
 let totalScores = [];
 
+//Start Quiz
 function start() {
     started = true;
-    score = 0
-    //reset timer
+    score = 0;
     var timerTime = 60 * initialTime;
-    startTimer(timerTime, display)
-    //startTime();
+    startTimer(timerTime, display);
     updateScores();
 
     //reset the question position
@@ -141,24 +141,25 @@ function nextQuestion() {
         endQuiz();
         return;
     }
-   
-    //display question
+
+    //Display Question
     $('#question').html(currentQuestion.question);
 
 
-    //display the answers + attach id
+    //Display the answers + attach id
     $('#answers').html('');
     currentQuestion.answers.forEach(singleAnswer => {
         $('#answers').append(`<li id='${singleAnswer.id}' class='clickedAnswer'>${singleAnswer.answer}</li>`)
     });
 }
+
+//Correct or incorrect answer
 function answerQuestion(e) {
     addToScore = false;
     const answerId = e.target.id;
     //find the correct answer from the list of answers
     const correctAnswer = currentQuestion.answers.find(x => x.correct);
     if (correctAnswer.id == answerId) {
-        //add to score
         addToScore = true;
         console.log('correct');
 
@@ -171,6 +172,7 @@ function answerQuestion(e) {
     nextQuestion();
 }
 
+//Adding to current score
 function showScore(addToScore) {
     score = addToScore ? score + 1 : score;
     $('#results').html(score);
@@ -193,18 +195,21 @@ function endQuiz() {
     restart();
 }
 
+//Save Prompt
 function saveInitials() {
     var initials = prompt("Enter your initials to save your score", "AA");
-    totalScores.push({name: initials, score: score});
+    totalScores.push({ name: initials, score: score });
     if (initials) {
-            localStorage.setItem("initials", JSON.stringify(totalScores));
-        }
+        localStorage.setItem("initials", JSON.stringify(totalScores));
     }
-    
+}
+
+//Ending Score Alert
 function showScores() {
     alert("Your score is " + score);
 }
 
+//Add new scores to already saved scores
 function updateScores() {
     const jScores = localStorage.getItem("initials");
     totalScores = jScores ? JSON.parse(jScores) : [];
