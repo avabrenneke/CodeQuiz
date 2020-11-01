@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code-Quiz</title>
+    <link rel="stylesheet" href="code_quiz_practice.css">
+</head>
+
+<body>
+    <div id="quiz">
+        <h1>Code Quiz</h1>
+        <h2>Rules:</h2>
+        <p>Click the correct answer.</p>
+        <p>For each correct answser you will get one point added to your score</p>
+        <p>For each incorrect answer you will lose ten seconds</p>
+        <p>If the timer runs out, the game will end!</p>
+        <h2>Question</h2>
+        <div id="test">
+            <div id="question"></div>
+            <h2>Answers</h2>
+            <ul id="answers">
+
+            </ul>
+        </div>
+        <p id="timer"></p>
+        <button id=startTime onclick="start()">Start Quiz</button>
+        <h2 id="test_status"></h2>
+    </div>
+   
+    <br>
+    <h2>Score</h2>
+    <div id="results"></div>
+    
+<h2>High Scores</h2>
+<div id="highscores">
+
+    
+</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="codepractice.js"></script>
+
+</body>
+
+</html>
