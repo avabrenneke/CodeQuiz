@@ -125,3 +125,30 @@ function startTimer(duration, display) {
         }
     }, 1000);
 }
+
+//renders a question for display 
+function renderQuestion() {
+    test = get("test");
+}
+
+//Next Question 
+function nextQuestion() {
+    if (!started) {
+        return;
+    }
+    currentQuestion = questions[currentQuestionPosition];
+    if (!currentQuestion) {
+        endQuiz();
+        return;
+    }
+   
+    //display question
+    $('#question').html(currentQuestion.question);
+
+
+    //display the answers + attach id
+    $('#answers').html('');
+    currentQuestion.answers.forEach(singleAnswer => {
+        $('#answers').append(`<li id='${singleAnswer.id}' class='clickedAnswer'>${singleAnswer.answer}</li>`)
+    });
+}
