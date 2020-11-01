@@ -192,3 +192,42 @@ function endQuiz() {
     updateScores();
     restart();
 }
+
+function saveInitials() {
+    var initials = prompt("Enter your initials to save your score", "AA");
+    totalScores.push({name: initials, score: score});
+    if (initials) {
+            localStorage.setItem("initials", JSON.stringify(totalScores));
+        }
+    }
+    
+function showScores() {
+    alert("Your score is " + score);
+}
+
+function updateScores() {
+    const jScores = localStorage.getItem("initials");
+    totalScores = jScores ? JSON.parse(jScores) : [];
+
+    $('#highscores').html('');
+    totalScores.forEach(x => {
+        $('#highscores').append(`<div class='score-div'>`);
+        $('#highscores').append(`<span class='score-name-text'>Name: </span>  <span class='score-name'>`);
+        $('#highscores').append(x.name);
+        $('#highscores').append(`</span><span class='score-name-text'> Score: </span><span class='score-score'>${x.score} </span></div>`);
+    });
+}
+
+//Reset questions answers and score
+function restart() {
+    $('#question').html('');
+    $('#answers').html('');
+    $('#results').html('');
+}
+
+$(document).ready(function () {
+    $(document).on('click', '.clickedAnswer', function (e) {
+        answerQuestion(e);
+    })
+})
+
