@@ -83,3 +83,11 @@ const questions = [
     }
 
 ];
+
+let currentQuestionPosition = 0;
+let currentQuestion = '';
+const timeReduction = 10; //seconds
+const initialTime = 1; //minutes
+let started = false;
+let score = 0;
+let totalScores = [];
