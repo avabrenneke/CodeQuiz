@@ -1,0 +1,35 @@
+#question {
+    border: #5AB029 3px solid;
+    padding: 10px 40px 40px 40px;
+    background-color: #E5FCE3;
+    width: 50%;
+}
+
+#answers {
+    border: hotpink 3px solid;
+    padding: 10px 40px 40px 40px;
+    background-color: pink;
+    width: 50%;
+}
+
+#results {
+    border: blue 3px solid;
+    padding: 10px 40px 40px 40px;
+    background-color: lightblue;
+    width: 50%;
+}
+
+#highscores {
+    border: purple 3px solid;
+    padding: 10px 40px 40px 40px;
+    background-color: lavender;
+    width: 50%;
+}
+
+h2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p {
+    font-family: monospace;
+}
