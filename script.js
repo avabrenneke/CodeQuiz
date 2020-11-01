@@ -152,3 +152,43 @@ function nextQuestion() {
         $('#answers').append(`<li id='${singleAnswer.id}' class='clickedAnswer'>${singleAnswer.answer}</li>`)
     });
 }
+function answerQuestion(e) {
+    addToScore = false;
+    const answerId = e.target.id;
+    //find the correct answer from the list of answers
+    const correctAnswer = currentQuestion.answers.find(x => x.correct);
+    if (correctAnswer.id == answerId) {
+        //add to score
+        addToScore = true;
+        console.log('correct');
+
+    } else {
+
+        reduceTimer();
+    }
+    showScore(addToScore);
+    currentQuestionPosition++;
+    nextQuestion();
+}
+
+function showScore(addToScore) {
+    score = addToScore ? score + 1 : score;
+    $('#results').html(score);
+    console.log(score);
+}
+
+//Time Reduction
+function reduceTimer() {
+    timer -= timeReduction;
+}
+
+//Ending the quiz
+function endQuiz() {
+    clearInterval(timerInterval);
+    timer = null;
+    started = false;
+    saveInitials();
+    showScores();
+    updateScores();
+    restart();
+}
